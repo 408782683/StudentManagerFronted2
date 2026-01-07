@@ -59,7 +59,7 @@
             type="primary"
             :loading="loading"
             @click="submit"
-            style="width:100%;"
+            class="auth-submit"
             aria-live="polite"
           >
             登录

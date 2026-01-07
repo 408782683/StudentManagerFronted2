@@ -1,16 +1,26 @@
 <template>
-  <div class="app-shell">
-    <h1 style="margin-bottom:8px;">管理员工作台</h1>
-    <p style="margin-top:0;color:#475569;">请选择要进入的业务模块，完成对应的教务管理任务。</p>
-    <el-row :gutter="16">
+  <div class="app-shell dashboard-shell">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">管理员工作台</h1>
+        <p class="page-subtitle">请选择要进入的业务模块，完成对应的教务管理任务。</p>
+      </div>
+      <div class="page-meta">
+        <el-tag type="danger" effect="dark">Admin Center</el-tag>
+        <span class="page-meta__text">教务核心管理入口</span>
+      </div>
+    </div>
+    <el-row :gutter="20">
       <el-col v-for="card in cards" :key="card.route" :xs="24" :sm="12" :md="8" :lg="6">
-        <el-card shadow="hover" class="module-card" @click="go(card.route)" :body-style="{minHeight:'140px',cursor:'pointer'}">
-          <div style="display:flex;align-items:flex-start;gap:10px;">
-            <el-icon :size="26"><component :is="card.icon" /></el-icon>
-            <div>
-              <div style="font-weight:700;font-size:16px;">{{ card.title }}</div>
-              <div style="color:#6b7280;margin:6px 0 10px;">{{ card.desc }}</div>
-              <el-tag size="small" type="info">{{ card.badge }}</el-tag>
+        <el-card shadow="hover" class="module-card" @click="go(card.route)">
+          <div class="module-card__content">
+            <div class="module-card__icon">
+              <el-icon :size="26"><component :is="card.icon" /></el-icon>
+            </div>
+            <div class="module-card__text">
+              <div class="module-card__title">{{ card.title }}</div>
+              <div class="module-card__desc">{{ card.desc }}</div>
+              <el-tag size="small" type="info" effect="light">{{ card.badge }}</el-tag>
             </div>
           </div>
         </el-card>

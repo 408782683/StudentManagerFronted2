@@ -1,16 +1,16 @@
 <template>
   <el-space wrap fill>
-    <el-card class="card-block" shadow="hover">
+    <el-card class="card-block data-card" shadow="hover">
       <template #header><strong>课程管理</strong></template>
       <el-form :model="course" label-width="90px" :inline="true">
         <el-form-item label="课程名"><el-input v-model="course.name" /></el-form-item>
-        <el-form-item label="学分"><el-input v-model.number="course.credit" type="number" style="width:120px;" /></el-form-item>
+        <el-form-item label="学分"><el-input v-model.number="course.credit" type="number" class="input-compact" /></el-form-item>
         <el-form-item label="分类"><el-input v-model="course.category" /></el-form-item>
         <el-form-item label="性质"><el-input v-model="course.nature" /></el-form-item>
         <el-form-item label="考核"><el-input v-model="course.assessmentMethod" /></el-form-item>
         <el-form-item><el-button type="primary" @click="saveCourse">保存课程</el-button></el-form-item>
       </el-form>
-      <el-table :data="courses" height="260" style="margin-top:8px;">
+      <el-table :data="courses" height="260" class="data-table">
         <el-table-column prop="id" label="ID" width="50" />
         <el-table-column prop="name" label="课程" />
         <el-table-column prop="credit" label="学分" width="80" />
@@ -19,32 +19,32 @@
       </el-table>
     </el-card>
 
-    <el-card class="card-block" shadow="hover">
+    <el-card class="card-block data-card" shadow="hover">
       <template #header><strong>培养计划</strong></template>
       <el-form :model="plan" label-width="90px" :inline="true">
         <el-form-item label="学期"><el-input v-model="plan.term" placeholder="2024-2025-1" /></el-form-item>
         <el-form-item label="专业">
-          <el-select v-model="plan.majorId" placeholder="选择专业" style="width:180px;">
+          <el-select v-model="plan.majorId" placeholder="选择专业" class="select-medium">
             <el-option v-for="m in majors" :key="m.id" :label="m.name" :value="m.id" />
           </el-select>
         </el-form-item>
         <el-form-item label="课程">
-          <el-select v-model="plan.courseId" placeholder="选择课程" style="width:180px;">
+          <el-select v-model="plan.courseId" placeholder="选择课程" class="select-medium">
             <el-option v-for="c in courses" :key="c.id" :label="c.name" :value="c.id" />
           </el-select>
         </el-form-item>
         <el-form-item><el-button type="primary" @click="savePlan">新增计划</el-button></el-form-item>
       </el-form>
-      <el-form :model="planQuery" label-width="90px" :inline="true" style="margin-top:6px;">
+      <el-form :model="planQuery" label-width="90px" :inline="true" class="form-subtle">
         <el-form-item label="学期"><el-input v-model="planQuery.term" /></el-form-item>
         <el-form-item label="专业">
-          <el-select v-model="planQuery.majorId" placeholder="选择专业" style="width:180px;">
+          <el-select v-model="planQuery.majorId" placeholder="选择专业" class="select-medium">
             <el-option v-for="m in majors" :key="m.id" :label="m.name" :value="m.id" />
           </el-select>
         </el-form-item>
         <el-form-item><el-button @click="loadPlans">查询计划</el-button></el-form-item>
       </el-form>
-      <el-table :data="plans" height="260" style="margin-top:8px;">
+      <el-table :data="plans" height="260" class="data-table">
         <el-table-column prop="id" label="ID" width="50" />
         <el-table-column prop="term" label="学期" />
         <el-table-column prop="majorId" label="专业ID" />
