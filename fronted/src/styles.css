@@ -407,6 +407,10 @@ body {
   color: #1c1c1e;
 }
 
+.auth-submit {
+  width: 100%;
+}
+
 .auth-captcha {
   display: flex;
   align-items: center;
