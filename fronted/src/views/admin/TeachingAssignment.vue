@@ -1,12 +1,12 @@
 <template>
-  <el-card class="card-block" shadow="hover">
+  <el-card class="card-block data-card" shadow="hover">
     <template #header><strong>教学任务分配</strong></template>
     <el-form :model="assignment" label-width="110px" :inline="true">
       <el-form-item label="学期">
         <el-input v-model="assignment.term" placeholder="2024-2025-1" />
       </el-form-item>
       <el-form-item label="计划ID">
-        <el-select v-model="assignment.termPlanId" placeholder="选择计划" style="width:200px;">
+        <el-select v-model="assignment.termPlanId" placeholder="选择计划" class="select-wide">
           <el-option v-for="p in plans" :key="p.id" :label="`${p.id} - ${p.term}`" :value="p.id" />
         </el-select>
       </el-form-item>
@@ -16,13 +16,13 @@
       <el-form-item><el-button type="primary" @click="saveAssignment">保存分配</el-button></el-form-item>
     </el-form>
     <el-divider content-position="left">查询</el-divider>
-    <el-form :inline="true" label-width="80px" style="margin-top:6px;">
+    <el-form :inline="true" label-width="80px" class="form-subtle">
       <el-form-item label="学期">
         <el-input v-model="assignmentTerm" placeholder="查询学期" />
       </el-form-item>
       <el-form-item><el-button @click="loadAssignments">查询</el-button></el-form-item>
     </el-form>
-    <el-table :data="assignments" height="320" style="margin-top:8px;">
+    <el-table :data="assignments" height="320" class="data-table">
       <el-table-column prop="id" label="ID" width="60" />
       <el-table-column prop="termPlanId" label="计划ID" />
       <el-table-column prop="teacherId" label="教师ID" />

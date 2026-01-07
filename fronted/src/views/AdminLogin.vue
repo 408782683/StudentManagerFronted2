@@ -50,7 +50,7 @@
               autocomplete="one-time-code"
               aria-required="true"
             />
-            <el-button :icon="Refresh" @click="fetchCaptcha">获取验证码</el-button>
+            <el-button :icon="Refresh" @click="fetchCaptcha">刷新验证码</el-button>
             <el-tag v-if="captchaText" type="info">{{ captchaText }}</el-tag>
           </div>
         </el-form-item>
@@ -59,7 +59,7 @@
             type="primary"
             :loading="loading"
             @click="submit"
-            style="width:100%;"
+            class="auth-submit"
             aria-live="polite"
           >
             登录
