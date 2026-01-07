@@ -1,16 +1,16 @@
 <template>
-  <el-card class="card-block" shadow="hover">
+  <el-card class="card-block data-card" shadow="hover">
     <template #header><strong>自主选课</strong></template>
     <el-form :inline="true" label-width="90px">
       <el-form-item label="学期"><el-input v-model="selectTerm" /></el-form-item>
       <el-form-item label="课程">
-        <el-select v-model.number="selectedCourseId" placeholder="选择课程" style="width:200px;">
+        <el-select v-model.number="selectedCourseId" placeholder="选择课程" class="select-wide">
           <el-option v-for="c in courses" :key="c.id" :label="`${c.name} (${c.credit}学分)`" :value="c.id" />
         </el-select>
       </el-form-item>
       <el-form-item><el-button type="primary" @click="selectCourse">选课</el-button></el-form-item>
     </el-form>
-    <el-button style="margin:8px 0;" @click="loadSelectedCourses">刷新已选课程</el-button>
+    <el-button class="button-spaced" @click="loadSelectedCourses">刷新已选课程</el-button>
     <el-table :data="selectedCourses" height="360">
       <el-table-column prop="id" label="记录ID" width="80" />
       <el-table-column prop="courseId" label="课程ID" />

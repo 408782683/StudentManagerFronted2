@@ -1,20 +1,20 @@
 <template>
-  <el-card class="card-block" shadow="hover">
+  <el-card class="card-block data-card" shadow="hover">
     <template #header><strong>课表管理</strong></template>
     <el-form :model="upload" label-width="90px" :inline="true">
       <el-form-item label="归属">
-        <el-select v-model="upload.ownerType" style="width:160px;">
+        <el-select v-model="upload.ownerType" class="select-compact">
           <el-option label="专业" value="MAJOR" />
           <el-option label="教师" value="TEACHER" />
           <el-option label="学生" value="STUDENT" />
         </el-select>
       </el-form-item>
-      <el-form-item label="关联ID"><el-input v-model.number="upload.ownerId" type="number" style="width:140px;" /></el-form-item>
+      <el-form-item label="关联ID"><el-input v-model.number="upload.ownerId" type="number" class="input-compact" /></el-form-item>
       <el-form-item label="学期"><el-input v-model="upload.term" placeholder="2024-2025-1" /></el-form-item>
       <el-form-item label="文件"><input type="file" @change="onFileChange" /></el-form-item>
       <el-form-item><el-button type="primary" :disabled="!upload.file" @click="doUpload">上传</el-button></el-form-item>
     </el-form>
-    <el-table :data="timetables" style="margin-top:12px;" height="380">
+    <el-table :data="timetables" class="data-table" height="380">
       <el-table-column prop="id" label="ID" width="60" />
       <el-table-column prop="ownerType" label="归属" />
       <el-table-column prop="ownerId" label="关联ID" />

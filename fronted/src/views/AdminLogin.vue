@@ -5,15 +5,13 @@
         <img :src="logo" alt="淮安大学教务系统 logo" />
         <div class="brand-text">
           <span class="brand-title">淮安大学教务系统</span>
-          <span class="brand-sub">Huai'an University Academic Portal</span>
         </div>
       </div>
       <div class="auth-header">
         <div>
           <h1 class="auth-title">管理员登录</h1>
-          <p class="auth-subtitle">进入教务管理后台，完成资源与权限管理</p>
         </div>
-        <el-tag type="danger" effect="light">Admin</el-tag>
+        <el-tag type="danger" effect="light">管理员</el-tag>
       </div>
       <el-form
         class="auth-form"
@@ -50,7 +48,7 @@
               autocomplete="one-time-code"
               aria-required="true"
             />
-            <el-button :icon="Refresh" @click="fetchCaptcha">获取验证码</el-button>
+            <el-button :icon="Refresh" @click="fetchCaptcha">刷新验证码</el-button>
             <el-tag v-if="captchaText" type="info">{{ captchaText }}</el-tag>
           </div>
         </el-form-item>
@@ -59,7 +57,7 @@
             type="primary"
             :loading="loading"
             @click="submit"
-            style="width:100%;"
+            class="auth-submit"
             aria-live="polite"
           >
             登录

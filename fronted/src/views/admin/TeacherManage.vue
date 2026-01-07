@@ -1,13 +1,13 @@
 <template>
-  <el-card shadow="hover">
+  <el-card shadow="hover" class="data-card">
     <template #header>
-      <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div class="card-header">
         <strong>教师管理</strong>
         <el-button type="primary" @click="loadTeachers">刷新</el-button>
       </div>
     </template>
     <el-form :model="teacher" label-width="100px" :inline="true">
-      <el-form-item label="ID"><el-input v-model="teacher.id" type="number" placeholder="留空新增" style="width:150px;" /></el-form-item>
+      <el-form-item label="ID"><el-input v-model="teacher.id" type="number" placeholder="留空新增" class="input-short" /></el-form-item>
       <el-form-item label="工号"><el-input v-model="teacher.teacherNo" /></el-form-item>
       <el-form-item label="姓名"><el-input v-model="teacher.name" /></el-form-item>
       <el-form-item label="职称"><el-input v-model="teacher.title" /></el-form-item>
@@ -17,7 +17,7 @@
       <el-form-item label="入职日期"><el-date-picker v-model="teacher.hiredDate" type="date" value-format="YYYY-MM-DD" /></el-form-item>
       <el-form-item><el-button type="primary" @click="saveTeacher">保存教师</el-button></el-form-item>
     </el-form>
-    <el-table :data="teachers" style="width:100%;margin-top:12px;" height="520">
+    <el-table :data="teachers" class="data-table" height="520">
       <el-table-column prop="id" label="ID" width="60" />
       <el-table-column prop="teacherNo" label="工号" />
       <el-table-column prop="name" label="姓名" />

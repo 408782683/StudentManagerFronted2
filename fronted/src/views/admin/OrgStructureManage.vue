@@ -1,6 +1,6 @@
 <template>
   <el-space wrap fill>
-    <el-card class="card-block" shadow="hover">
+    <el-card class="card-block data-card" shadow="hover">
       <template #header><strong>学院管理</strong></template>
       <el-form :model="college" label-width="90px" :inline="true">
         <el-form-item label="学院名"><el-input v-model="college.name" /></el-form-item>
@@ -8,18 +8,18 @@
         <el-form-item label="描述"><el-input v-model="college.description" /></el-form-item>
         <el-form-item><el-button type="primary" @click="saveCollege">保存学院</el-button></el-form-item>
       </el-form>
-      <el-table :data="colleges" height="260" style="margin-top:8px;">
+      <el-table :data="colleges" height="260" class="data-table">
         <el-table-column prop="id" label="ID" width="60" />
         <el-table-column prop="name" label="学院" />
         <el-table-column prop="code" label="代码" />
       </el-table>
     </el-card>
 
-    <el-card class="card-block" shadow="hover">
+    <el-card class="card-block data-card" shadow="hover">
       <template #header><strong>专业管理</strong></template>
       <el-form :model="major" label-width="90px" :inline="true">
         <el-form-item label="学院">
-          <el-select v-model="major.collegeId" placeholder="选择学院" style="width:180px;">
+          <el-select v-model="major.collegeId" placeholder="选择学院" class="select-medium">
             <el-option v-for="c in colleges" :key="c.id" :label="c.name" :value="c.id" />
           </el-select>
         </el-form-item>
@@ -28,7 +28,7 @@
         <el-form-item label="描述"><el-input v-model="major.description" /></el-form-item>
         <el-form-item><el-button type="primary" @click="saveMajor">保存专业</el-button></el-form-item>
       </el-form>
-      <el-table :data="majors" height="260" style="margin-top:8px;">
+      <el-table :data="majors" height="260" class="data-table">
         <el-table-column prop="id" label="ID" width="60" />
         <el-table-column prop="name" label="专业" />
         <el-table-column prop="code" label="代码" />
@@ -36,11 +36,11 @@
       </el-table>
     </el-card>
 
-    <el-card class="card-block" shadow="hover">
+    <el-card class="card-block data-card" shadow="hover">
       <template #header><strong>班级管理</strong></template>
       <el-form :model="clazz" label-width="90px" :inline="true">
         <el-form-item label="专业">
-          <el-select v-model="clazz.majorId" placeholder="选择专业" style="width:180px;">
+          <el-select v-model="clazz.majorId" placeholder="选择专业" class="select-medium">
             <el-option v-for="m in majors" :key="m.id" :label="m.name" :value="m.id" />
           </el-select>
         </el-form-item>
@@ -49,7 +49,7 @@
         <el-form-item label="辅导员"><el-input v-model="clazz.counselor" /></el-form-item>
         <el-form-item><el-button type="primary" @click="saveClazz">保存班级</el-button></el-form-item>
       </el-form>
-      <el-table :data="clazzes" height="260" style="margin-top:8px;">
+      <el-table :data="clazzes" height="260" class="data-table">
         <el-table-column prop="id" label="ID" width="60" />
         <el-table-column prop="name" label="班级" />
         <el-table-column prop="majorId" label="专业ID" />

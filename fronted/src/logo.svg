@@ -1,6 +1,6 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">淮安大学教务系统</title>
-  <desc id="desc">Huai'an University academic system circular mark</desc>
+  <desc id="desc">淮安大学教务系统标识</desc>
   <defs>
     <linearGradient id="bg" x1="24" y1="32" x2="230" y2="210" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0EA5E9"/>
@@ -15,6 +15,6 @@
   <circle cx="128" cy="128" r="116" fill="url(#bg)"/>
   <circle cx="118" cy="110" r="110" fill="url(#glow)" />
   <circle cx="128" cy="128" r="104" fill="none" stroke="#FFFFFF" stroke-opacity="0.65" stroke-width="8"/>
-  <text x="50%" y="118" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" letter-spacing="1">HAU</text>
-  <text x="50%" y="152" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#E6F3FF" letter-spacing="2">EDU</text>
+  <text x="50%" y="118" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="1">淮安大学</text>
+  <text x="50%" y="152" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#E6F3FF" letter-spacing="2">教务系统</text>
 </svg>
