@@ -6,7 +6,7 @@
         <p class="page-subtitle">选择要进行的教学任务入口。</p>
       </div>
       <div class="page-meta">
-        <el-tag type="warning" effect="dark">Teaching Hub</el-tag>
+        <el-tag type="warning" effect="dark">教学中心</el-tag>
         <span class="page-meta__text">课程与教学管理</span>
       </div>
     </div>

@@ -6,7 +6,7 @@
         <p class="page-subtitle">请选择要进入的业务模块，完成对应的教务管理任务。</p>
       </div>
       <div class="page-meta">
-        <el-tag type="danger" effect="dark">Admin Center</el-tag>
+        <el-tag type="danger" effect="dark">管理中心</el-tag>
         <span class="page-meta__text">教务核心管理入口</span>
       </div>
     </div>
@@ -35,12 +35,12 @@ import { School, Collection, Notebook, SetUp, List, Upload } from '@element-plus
 
 const router = useRouter();
 const cards = [
-  { title: '学生管理', desc: '录入、查询、更新和删除学生信息。', route: '/admin/students', badge: 'Student', icon: School },
-  { title: '教师管理', desc: '维护教师档案、联系方式与任教信息。', route: '/admin/teachers', badge: 'Teacher', icon: Collection },
-  { title: '学院 / 专业 / 班级', desc: '维护院系层级、专业与班级关联。', route: '/admin/org', badge: 'Org', icon: Notebook },
-  { title: '课程与培养计划', desc: '配置课程与学期培养计划。', route: '/admin/course-plan', badge: 'Course', icon: SetUp },
-  { title: '教学任务分配', desc: '为计划分配授课教师并查看历史记录。', route: '/admin/assignments', badge: 'Task', icon: List },
-  { title: '课表管理', desc: '上传并管理专业 / 教师 / 学生课表文件。', route: '/admin/timetable', badge: 'Timetable', icon: Upload }
+  { title: '学生管理', desc: '录入、查询、更新和删除学生信息。', route: '/admin/students', badge: '学生', icon: School },
+  { title: '教师管理', desc: '维护教师档案、联系方式与任教信息。', route: '/admin/teachers', badge: '教师', icon: Collection },
+  { title: '学院 / 专业 / 班级', desc: '维护院系层级、专业与班级关联。', route: '/admin/org', badge: '组织', icon: Notebook },
+  { title: '课程与培养计划', desc: '配置课程与学期培养计划。', route: '/admin/course-plan', badge: '课程', icon: SetUp },
+  { title: '教学任务分配', desc: '为计划分配授课教师并查看历史记录。', route: '/admin/assignments', badge: '任务', icon: List },
+  { title: '课表管理', desc: '上传并管理专业 / 教师 / 学生课表文件。', route: '/admin/timetable', badge: '课表', icon: Upload }
 ];
 
 const go = (route) => router.push(route);

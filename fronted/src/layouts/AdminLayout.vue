@@ -14,10 +14,9 @@
     <el-container>
       <el-header class="app-header">
         <div class="app-header__brand">
-          <el-icon class="app-header__icon"><i-ep-suitcase /></el-icon>
+          <img :src="logo" alt="淮安大学教务系统 logo" class="app-header__logo" />
           <div class="app-header__text">
             <div class="app-header__title">淮安大学教务系统 · 管理员中心</div>
-            <div class="app-header__subtitle">Huai'an University Academic Admin Portal</div>
           </div>
         </div>
         <div class="app-header__actions">
@@ -37,7 +36,7 @@
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { getUser, clearUser } from '../utils/auth';
-import { Suitcase as IepSuitcase } from '@element-plus/icons-vue';
+import logo from '../logo.png';
 
 const route = useRoute();
 const router = useRouter();

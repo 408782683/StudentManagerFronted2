@@ -12,10 +12,9 @@
     <el-container>
       <el-header class="app-header">
         <div class="app-header__brand">
-          <el-icon class="app-header__icon"><i-ep-notebook /></el-icon>
+          <img :src="logo" alt="淮安大学教务系统 logo" class="app-header__logo" />
           <div class="app-header__text">
             <div class="app-header__title">淮安大学教务系统 · 教师中心</div>
-            <div class="app-header__subtitle">Huai'an University Teaching Portal</div>
           </div>
         </div>
         <div class="app-header__actions">
@@ -35,6 +34,7 @@
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { getUser, clearUser } from '../utils/auth';
+import logo from '../logo.png';
 
 const route = useRoute();
 const router = useRouter();

@@ -6,7 +6,7 @@
         <p class="page-subtitle">请选择你要进行的学习与查询入口。</p>
       </div>
       <div class="page-meta">
-        <el-tag type="success" effect="dark">Student Space</el-tag>
+        <el-tag type="success" effect="dark">学生空间</el-tag>
         <span class="page-meta__text">学习与查询服务</span>
       </div>
     </div>
