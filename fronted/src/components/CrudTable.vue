@@ -10,8 +10,8 @@
       <tr v-for="row in rows" :key="row[idField]">
         <td v-for="h in headers" :key="h.key">{{ row[h.key] }}</td>
         <td v-if="onEdit || onDelete">
-          <button v-if="onEdit" @click="() => onEdit(row)">编辑</button>
-          <button v-if="onDelete" @click="() => onDelete(row)" style="margin-left:6px; background:#dc2626;">删除</button>
+          <button v-if="onEdit" class="btn-ghost" @click="() => onEdit(row)">编辑</button>
+          <button v-if="onDelete" class="btn-danger" @click="() => onDelete(row)">删除</button>
         </td>
       </tr>
     </tbody>
